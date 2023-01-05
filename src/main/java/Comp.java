@@ -117,7 +117,8 @@ public class Comp {
                         coordinatesList.add(2);
                         coordinatesList.add(1);
                     }
-                } else {
+                }
+                if (field[2][0].equals(compSign) || field[0][0].equals(compSign)) {
                     if (field[1][0].equals("*")) {
                         coordinatesList.add(1);
                         coordinatesList.add(0);
