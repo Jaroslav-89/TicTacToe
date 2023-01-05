@@ -24,7 +24,7 @@ public class Main {
         System.out.println("Вы ставите: " + player.playerSign + "\nКомпьютер ставит: " + comp.compSign);
 
         //можно выбрать, чтобы первым ходил компьютер
-        System.out.println("Если хотите, чтобы компьютер ходил перым, введите Comp");
+        System.out.println("Если хотите, чтобы компьютер ходил перым, введите Comp.\nЕсли хотите ходить сами, введите что угодно.");
         Scanner scanner = new Scanner(System.in);
         String answer = scanner.next().trim();
         if (answer.equalsIgnoreCase("Comp")) {
