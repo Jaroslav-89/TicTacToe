@@ -96,6 +96,36 @@ public class Comp {
                 searchSign = playerSign;
             }
 
+            //если это 5й ход, значит компьютер ходил первым в центр, после этого были ходы, которые проверялись на два символа
+            //в ряд сначала у компьютера, затем у игрока и если таких совпадений не было, то будет выполнено условие ниже
+            //которое приведет к победе компьютера
+            if (moveCount == 4 && count == 2) {
+                if (field[0][0].equals(compSign) || field[0][2].equals(compSign)) {
+                    if (field[0][1].equals("*")) {
+                        coordinatesList.add(0);
+                        coordinatesList.add(1);
+                    }
+                }
+                if (field[0][2].equals(compSign) || field[2][2].equals(compSign)) {
+                    if (field[1][2].equals("*")) {
+                        coordinatesList.add(1);
+                        coordinatesList.add(2);
+                    }
+                }
+                if (field[2][2].equals(compSign) || field[2][0].equals(compSign)) {
+                    if (field[2][1].equals("*")) {
+                        coordinatesList.add(2);
+                        coordinatesList.add(1);
+                    }
+                } else {
+                    if (field[1][0].equals("*")) {
+                        coordinatesList.add(1);
+                        coordinatesList.add(0);
+                    }
+                }
+                return coordinatesList;
+            }
+
 
             //ищем два символа по диагонали, чтобы поставить свой, если место пустое
             //(диагонали в приоритете, поэтому проверяем их первыми)
