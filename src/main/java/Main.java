@@ -24,9 +24,9 @@ public class Main {
         System.out.println("Вы ставите: " + player.playerSign + "\nКомпьютер ставит: " + comp.compSign);
 
         //можно выбрать, чтобы первым ходил компьютер
-        System.out.println("Если хотите, чтобы компьютер ходил перым, введите Comp.\nЕсли хотите ходить сами, введите что угодно.");
+        System.out.println("Если хотите, чтобы компьютер ходил первым, введите Comp.\nЕсли хотите ходить сами, введите что угодно.");
         Scanner scanner = new Scanner(System.in);
-        String answer = scanner.next().trim();
+        String answer = scanner.nextLine();
         if (answer.equalsIgnoreCase("Comp")) {
             //получаем координаты в правильном формате(комп)
             correctMove = comp.compMove(playField.field);
